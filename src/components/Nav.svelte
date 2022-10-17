@@ -3,14 +3,6 @@
 	let isOpen = false
 </script>
 
-<style>
-	@media(min-width: 769px) {
-		nav {
-			border-bottom: 1px solid gray;
-		}
-	}
-</style>
-
 <nav class="navbar" role="navigation" aria-label="main navigation">
 	<div class="navbar-brand">
 		<a href="/" class="navbar-item">
@@ -43,3 +35,11 @@
 		</div>
 	</div>
 </nav>
+
+<style>
+	@media(min-width: 769px) {
+		nav {
+			border-bottom: 1px solid gray;
+		}
+	}
+</style>
