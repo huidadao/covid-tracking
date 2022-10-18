@@ -4,7 +4,8 @@
     export async function preload() {
         try {
             const usStats = await requests.usStats()
-            return { usStats }
+            const historicUS = await requests.historicUS()
+            return { usStats, historicUS }
         } catch(e) {
             this.error(500, "There was an error in calling the api, please try again in 5 minutes.")
             return
@@ -21,7 +22,9 @@
     import Error from './_error.svelte';
 
     export let usStats
+    export let historicUS
     console.log(usStats, "usStats")
+    console.log(historicUS, "historicUS")
 </script>
 
 <svelte:head>
@@ -34,9 +37,9 @@
     </div>
 </div>
 
-<CovidStat {...usStats}  />
+<CovidStat {...usStats} />
 
-<CovidChart />
+<CovidChart {...historicUS} />
 
 <TableContainer />
 
